@@ -16,12 +16,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *normal = @"sidechick";
+    NSMutableString *reverse = [NSMutableString new];
+    NSUInteger normalLenght = [normal length];
+    NSLog(@"%lu", (unsigned long)normalLenght);
+    
+    
+    while (normalLenght > 0) {
+        NSLog(@"while loop started");
+       [reverse appendFormat:@"%c",[normal characterAtIndex:normalLenght - 1]];
+        normalLenght = normalLenght -1;
+        NSLog(@"%@", reverse);
+    }
+   
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
